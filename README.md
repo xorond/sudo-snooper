@@ -30,6 +30,7 @@ sudo = 'sudo'
 ```
 
 * give the necessary permissions to the python file
+
   You can go fancy here and make a non-readable executable file for users, but I'm not going into that. Check some of the answers [here](http://unix.stackexchange.com/questions/16623/file-permission-execute-only) for that.
 
 ## TODO:

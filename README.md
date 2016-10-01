@@ -8,7 +8,7 @@ This can be useful in penetration tests or security evaluations for testing user
 
 ## Installation steps
 
-### Option 1 - Install in place of the real sudo
+### Option 1 - Install in place of the real sudo (harder but less obvious)
 * move the original sudo binary to another name
 
 ```
@@ -38,7 +38,7 @@ sudo = 'sudo'
 
 To do that under Archlinux: `pyinstaller --onefile sudo-snooper.py` will work. However please note that once compiled you won't be able to change the parameters in the compiled binary.
 
-### Option 2 - Alias the sudo command
+### Option 2 - Alias the sudo command (easier but somewhat more noticable)
 
 This option is easier to do and more portable, however it might be more noticable to careful users.
 

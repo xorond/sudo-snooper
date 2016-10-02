@@ -9,6 +9,9 @@ This can be useful in penetration tests or security evaluations for testing user
 ## Installation steps
 
 ### Option 1 - Install in place of the real sudo (harder but less obvious)
+
+**You need root access for this install option**
+
 * move the original sudo binary to another name
 
 ```

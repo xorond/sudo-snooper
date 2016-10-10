@@ -72,5 +72,4 @@ You can then retrieve the user password by reading the dump file in the settings
 
 ## TODO:
 
-* handle when user enters wrong password
-* ~~don't ask for a password when the user has an active sudo session~~ **instead of this, now removes the cached credentials**
+[ ] handle when user enters wrong password

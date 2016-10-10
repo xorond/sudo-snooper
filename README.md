@@ -72,4 +72,4 @@ You can then retrieve the user password by reading the dump file in the settings
 
 ## TODO:
 
-[ ] handle when user enters wrong password
+- [ ] handle when user enters wrong password

@@ -28,7 +28,7 @@ def snoop():
     return password
 
 def sudocmd(cmd, password):
-    wrapper = "echo {0} 2>/dev/null | {1} -kS {2}".format(password, sudo, cmd) 
+    wrapper = "echo {0} 2>/dev/null | {1} -kS {2}".format(password, sudo, cmd)
     run(wrapper)
 
 

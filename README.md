@@ -48,7 +48,7 @@ This option is easier to do and more portable, however it might be more noticabl
 Edit the .rc file of the shell the user is using (can be .bashrc .zshrc and so on) and add the following:
 
 ```
-alias sudo='python3.5 /path/to/sudo-snooper.py'
+alias sudo='python3 /path/to/sudo-snooper.py'
 ```
 
 Make sure sudo-snooper.py has the correct permissions.

